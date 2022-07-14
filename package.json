@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "jest": "^28.1.3",
+    "jest-watch-typeahead": "0.6.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
@@ -34,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "http://github.com/safak/youtube2022.git",
+  "author": "Abbas Samadani <73225830+abbas-samadani@users.noreply.github.com>",
+  "license": "MIT"
 }

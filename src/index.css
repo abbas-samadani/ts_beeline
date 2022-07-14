@@ -1,0 +1,54 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-1{
+    flex:1;
+}
+
+.col-2{
+    flex:2;
+}
+
+.block{
+    background-color: rgb(223, 228, 228);
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.row.center{
+    align-items: center;
+}
+
+.button {
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    margin: 0.1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem #404040 solid;
+    background-color: #f0c040;
+    width: 100%;
+    cursor: pointer;
+}
+
+.add_btn{
+    background-color: #dadce7;
+    cursor: pointer;
+    width: 1.5rem;
+}
+
+.remove_btn {
+    background-color: #f04040;
+    cursor: pointer;
+
+    width: 1.5rem;
+}
+
+.button.badge{
+    background-color: #f04040;
+    border:none;
+    color: #ffffff;
+    width: 1.5rem;
+}

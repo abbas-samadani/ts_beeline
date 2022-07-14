@@ -1,0 +1,14 @@
+
+
+.products_list{
+    display: flex;   
+}
+
+.product_list_items{
+    flex : 3; 
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+
