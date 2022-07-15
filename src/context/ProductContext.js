@@ -8,10 +8,7 @@ export const ProductContext = createContext({});
 export const ProductContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
 
-    const getItemQuantity = (id) => {
-        return cartItems.find(item => item.id === id)?.qty || 0
-    }
-
+    //adding product to the basket
     const increaseCartQuantity = (product) => {
         const productExist = cartItems.find((item) => item.id === product.id)
         if (productExist) {
@@ -28,6 +25,7 @@ export const ProductContextProvider = ({ children }) => {
         decreaseStock(product.name);
     }
 
+    //removing product to the basket
     const decreaseCartQuantity = (product) => {
         const productExist = cartItems.find((item) => item.id === product.id)
         if (productExist.qty === 1) {
@@ -38,12 +36,7 @@ export const ProductContextProvider = ({ children }) => {
         increaseStock(product.name)
     }
 
-    const removeFromCart = (id) => {
-        setCartItems(currItems => {
-            return currItems.filter(item => item.id !== id)
-        })
-    }
-
+    // check stock level
     const checkStock = (productName) => {
         if (stockLevels[productName] !== 0) {
             return true
@@ -52,18 +45,21 @@ export const ProductContextProvider = ({ children }) => {
         }
     }
 
+    // remove the product from stock 
     const decreaseStock = (productName) => {
         if (stockLevels[productName] !== 0) {
             stockLevels[productName] = stockLevels[productName] - 1;
         }
     }
-
+    // add the product to the stock
     const increaseStock = (productName) => {
         stockLevels[productName] = stockLevels[productName] + 1;
     }
 
+    // calculate all product quantities that we added to the basket
     const totalQuantity = cartItems.reduce((qty, item) => item.qty + qty, 0);
 
+    // calculate total cart price
     const totalCartPrice = cartItems.reduce((total, cartItem) => total + cartItem.price * cartItem.qty, 0);
 
     return (
@@ -71,10 +67,8 @@ export const ProductContextProvider = ({ children }) => {
             value={{
                 products,
                 cartItems,
-                getItemQuantity,
                 increaseCartQuantity,
                 decreaseCartQuantity,
-                removeFromCart,
                 totalQuantity,
                 totalCartPrice,
                 checkStock

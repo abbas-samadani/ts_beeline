@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { ProductContext } from '../../context/ProductContext'
 import './product.css'
 export const Product = ({ product }) => {
+
+  // get some methods using useContext
   const { increaseCartQuantity, checkStock } = useContext(ProductContext)
   return (
     <div className="product_card">
